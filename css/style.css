@@ -1,0 +1,327 @@
+/* =========================================
+   1. CORE LAYOUT & RESET
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: #FFFFFF; 
+    color: #000000;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* =========================================
+   2. HEADER (1/3 Viewport)
+   ========================================= */
+.main-header {
+    height: 33.33vh; 
+    background: #000000;
+    background-image: url('../images/header-bg.jpg'); 
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    position: relative;
+    color: #FFFFFF;
+}
+
+.header-overlay {
+    background: rgba(0, 0, 0, 0.5); 
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.logo-area h1 {
+    font-size: 2.5rem;
+    letter-spacing: 4px;
+    color: #DAA520; 
+    margin-bottom: 5px;
+}
+
+.top-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.top-nav a {
+    color: #FFFFFF;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1.5px;
+    transition: color 0.3s ease;
+}
+
+.top-nav a:hover {
+    color: #DAA520;
+}
+
+/* =========================================
+   3. MAIN CONTENT & SECTIONS
+   ========================================= */
+.content-wrapper {
+    padding: 60px 10%;
+}
+
+.glam-section {
+    border-left: 5px solid #000000;
+    padding-left: 35px;
+    margin-bottom: 80px;
+}
+
+.glam-section h2 {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #DAA520; 
+    margin-bottom: 25px;
+}
+
+/* =========================================
+   4. PRODUCT GRID & CARDS
+   ========================================= */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.product-card {
+    position: relative;
+    background: #fff;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.img-placeholder {
+    background: #f4f4f4;
+    height: 350px;
+    width: 100%;
+    border: 1px solid #eee;
+    background-size: cover;
+    background-position: center;
+}
+
+.badge-new {
+    background: #DAA520;
+    color: #000;
+    padding: 5px 12px;
+    font-weight: bold;
+    font-size: 0.75rem;
+    position: absolute;
+    top: 10px;
+    left: -5px;
+    z-index: 10;
+}
+
+/* =========================================
+   5. BUTTONS & FORMS
+   ========================================= */
+.btn-gold {
+    display: inline-block;
+    background: #000000;
+    color: #DAA520;
+    border: 1px solid #DAA520;
+    padding: 12px 25px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.btn-gold:hover {
+    background: #DAA520;
+    color: #000000;
+}
+
+/* =========================================
+   6. CART & CHECKOUT TABLES
+   ========================================= */
+.cart-table {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.cart-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr; 
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.cart-row.header {
+    font-weight: bold;
+    color: #DAA520;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    border-bottom: 2px solid #000;
+}
+
+.product-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.cart-img-thumb {
+    width: 60px;
+    height: 80px;
+    flex-shrink: 0;
+    border: 1px solid #ddd;
+    background-size: cover;
+    background-position: center;
+}
+
+.cart-total {
+    text-align: right;
+    margin-top: 40px;
+}
+
+/* Checkout Layout Containers */
+.glam-section > div {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+/* =========================================
+   7. MODALS & FILTERS
+   ========================================= */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: none; 
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-overlay:target {
+    display: flex;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 40px;
+    max-width: 700px;
+    width: 90%;
+    position: relative;
+    border-left: 8px solid #000;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 2rem;
+    text-decoration: none;
+    color: #000;
+}
+
+/* =========================================
+   8. FOOTER
+   ========================================= */
+.main-footer {
+    background: #000000;
+    color: #FFFFFF;
+    padding: 60px 10%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.footer-section h4 {
+    color: #DAA520;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.copyright {
+    width: 100%;
+    text-align: center;
+    padding-top: 40px;
+    border-top: 1px solid #333;
+    font-size: 0.75rem;
+    color: #777;
+}
+
+/* =========================================
+   9. MEDIA QUERIES (RESPONSIVENESS)
+   ========================================= */
+@media (max-width: 768px) {
+    .content-wrapper {
+        padding: 40px 5%;
+    }
+
+    /* Checkout Columns Stacking */
+    .glam-section > div > div {
+        flex: 1 1 100% !important;
+        min-width: 100% !important;
+    }
+
+    /* Cart Table Mobile Stacking */
+    .cart-row.header {
+        display: none;
+    }
+
+    .cart-row {
+        grid-template-columns: 1fr;
+        text-align: left;
+        gap: 10px;
+        padding: 20px 0;
+    }
+
+    .cart-row div {
+        text-align: left !important;
+    }
+
+    /* Full Width Buttons for Mobile */
+    .btn-gold {
+        width: 100% !important;
+        display: block;
+    }
+
+    .main-header {
+        height: auto;
+        padding: 40px 0;
+    }
+
+    .top-nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+
+.footer-section a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+     color: blue;
+    
+}
